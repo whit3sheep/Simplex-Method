@@ -40,6 +40,20 @@ The solver automatically introduces slack variables ($s_1, s_2, \dots, s_m$) to 
 
 ## Example Implementation
 
+### Example Problem Formulation
+
+This example asks the solver to **Maximize**:
+$$Z = 20x_1 + 30x_2 + 15x_3 + 25x_4$$
+
+**Subject to:**
+* $2x_1 + 1x_2 + 1x_3 + 3x_4 \le 40$
+* $1x_1 + 2x_2 + 0x_3 + 1x_4 \le 30$
+* $0x_1 + 1x_2 + 2x_3 + 2x_4 \le 35$
+* $3x_1 + 0x_2 + 1x_3 + 1x_4 \le 45$
+* $1x_1 + 1x_2 + 1x_3 + 1x_4 \le 25$
+* $2x_1 + 2x_2 + 2x_3 + 0x_4 \le 50$
+* $x_1, x_2, x_3, x_4 \ge 0$
+
 Here is how to initialize and run the solver using a problem with 4 variables and 6 constraints:
 
 ```python
