@@ -17,7 +17,6 @@ c = np.array([20, 30, 15, 25])
 solver = SimplexSolver(A, b, c)
 
 while not solver.optimal():
-    
-    solver.update_tableau()
     solver.print_tableau()
-
+    solver.update_tableau()
+solver.print_solution()
