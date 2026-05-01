@@ -127,10 +127,12 @@ class SimplexSolver:
 
         print(f"{'Z-Row':<5} | {'':^5} | {z_vals} | {z_total:^{w}.2f}")
         print("=" * 9 * n + "\n")
-        print(f"Maximum Z Value:  {-z_total:.2f}")
-        print("Optimal Solution:")
 
-        for var, val in sol.items():
-            print(f"  {var} = {val:.2f}")
+        if self.optimal():
+            print(f"Maximum Z Value:  {-z_total:.2f}")
+            print("Optimal Solution:")
+
+            for var, val in sol.items():
+                print(f"  {var} = {val:.2f}")
 
 
