@@ -122,5 +122,6 @@ The main class to instantiate the solver.
 ### Core Methods
 * `optimal()`: Returns `True` if the current tableau represents the optimal solution (i.e., all values in the objective row are $\ge 0$).
 * `update_tableau()`: Performs a single iteration of the Simplex method (finds the pivot column, pivot row, and performs Gaussian elimination).
-* `print_tableau()`: Prints the current state of the tableau, the maximum $Z$ value, and the values of the decision variables to the console.
+* `print_tableau()`: Prints the current state of the tableau.
+* `print_solution()`: Prints the maximum $Z$ value, and the values of the decision variables to the console.
 * `get_solution()`: Returns a tuple containing the current objective value ($Z$) and a dictionary of the decision variables ($x_1, \dots, x_n$) and their current values.
