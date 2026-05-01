@@ -98,7 +98,7 @@ class SimplexSolver:
         x_names = [f"x{i+1}" for i in range(self.num_variables)]
         s_names = [f"s{i+1}" for i in range(self.num_constraints)]
         all_vars = x_names + s_names
-        z_total, sol = self.get_solution()
+        z_total, _ = self.get_solution()
         w = 8 # Set a fixed width for all number columns
         
         print("\n" + "=" * 9 * n)
@@ -128,11 +128,16 @@ class SimplexSolver:
         print(f"{'Z-Row':<5} | {'':^5} | {z_vals} | {z_total:^{w}.2f}")
         print("=" * 9 * n + "\n")
 
+
+
+    def print_solution(self):
+        z_total, sol = self.get_solution()
+        
         if self.optimal():
             print(f"Maximum Z Value:  {-z_total:.2f}")
             print("Optimal Solution:")
 
             for var, val in sol.items():
                 print(f"  {var} = {val:.2f}")
-
-
+        else:
+            print("Haven't reached optimal solution")
