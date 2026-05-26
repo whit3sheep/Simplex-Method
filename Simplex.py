@@ -62,8 +62,7 @@ class SimplexSolver:
             self.tableau[row_idx, 0] = self.tableau[0, col_idx] 
 
             pivot_element = self.tableau[row_idx, col_idx]
-            self.tableau[row_idx] = self.tableau[row_idx] / pivot_element
-            
+            self.tableau[row_idx, 1:] = self.tableau[row_idx, 1:] / pivot_element            
             pivot_row_vals = self.tableau[row_idx].copy()
             guides = self.tableau[1:, col_idx].copy()
             
